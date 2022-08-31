@@ -24,6 +24,7 @@
     }
 ?>
 
+<h2 class="text-center">Inser Brands</h2>
 
 <form action="" method="post" class="mb-2">
 
