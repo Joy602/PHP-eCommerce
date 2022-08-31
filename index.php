@@ -22,9 +22,10 @@
 </head>
 
 <body>
-    <!-- first child -->
-    <!-- navBar -->
+
     <div class="container-fluid p-0">
+        <!-- first child -->
+        <!-- navBar -->
         <nav class="navbar navbar-expand-lg bg-info">
             <div class="container-fluid">
                 <img src="./images/logo.png" alt="" class="logoImg">
@@ -197,7 +198,7 @@
                     
                     ?>
 
-                   
+
                 </ul>
 
                 <!-- Categoriess to be displayed -->
@@ -226,9 +227,9 @@
                     
                     ?>
 
-                     
 
-                    
+
+
                 </ul>
 
 
