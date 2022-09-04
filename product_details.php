@@ -68,11 +68,12 @@
                     </ul>
 
                     <form class="d-flex" action="search_product.php" method="get">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            name="search_data">
                         <!-- <button class="btn btn-outline-light" type="submit">Search</button> -->
                         <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
                     </form>
-                     
+
                 </div>
             </div>
         </nav>
@@ -100,6 +101,8 @@
             <div class="col-md-10  ">
                 <!-- products -->
                 <div class="row">
+                   
+                   
                     <!-- fethching products dynamically -->
                     <?php
                         // $select_query = "Select * from `products` order by rand() limit 0,3";
@@ -126,7 +129,8 @@
                         //     </div>
                         // </div>";
                         // }
-                        getProducts();
+                         
+                        view_details();
                         get_unique_categories();
                         get_unique_brands();
                     ?>

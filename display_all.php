@@ -126,7 +126,7 @@
                         //     </div>
                         // </div>";
                         // }
-                        getProducts();
+                        get_all_products();
                         get_unique_categories();
                         get_unique_brands();
                     ?>

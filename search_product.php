@@ -44,7 +44,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="display_all.php">Products</a>
+                            <a class="nav-link" href="#">Products</a>
                         </li>
 
                         <li class="nav-item">
@@ -67,7 +67,7 @@
 
                     </ul>
 
-                    <form class="d-flex" action="search_product.php" method="get">
+                    <form class="d-flex" action="" method="get">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
                         <!-- <button class="btn btn-outline-light" type="submit">Search</button> -->
                         <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
@@ -126,7 +126,8 @@
                         //     </div>
                         // </div>";
                         // }
-                        getProducts();
+                        //calling function
+                        search_product();
                         get_unique_categories();
                         get_unique_brands();
                     ?>
