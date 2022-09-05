@@ -77,6 +77,11 @@
             </div>
         </nav>
 
+        <!-- calling cart funtion -->
+        <?php
+        cart();
+        ?>
+
         <!-- second child -->
         <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
             <ul class="navbar-nav me-auto">
@@ -129,8 +134,8 @@
                         getProducts();
                         get_unique_categories();
                         get_unique_brands();
-                        $ip = getIPAddress(); 
-                        echo 'User Real IP Address - '.$ip;
+                        // $ip = getIPAddress(); 
+                        // echo 'User Real IP Address - '.$ip;
                     ?>
                     <!-- <div class="col-md-4 mb-2">
                         <div class="card">
