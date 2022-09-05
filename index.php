@@ -129,6 +129,8 @@
                         getProducts();
                         get_unique_categories();
                         get_unique_brands();
+                        $ip = getIPAddress(); 
+                        echo 'User Real IP Address - '.$ip;
                     ?>
                     <!-- <div class="col-md-4 mb-2">
                         <div class="card">
