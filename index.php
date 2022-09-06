@@ -56,11 +56,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-plus"></i><sup><?php    cart_item();?></sup></a>
+                            <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-plus"></i><sup><?php    cart_item();?></sup></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Total price</a>
+                            <a class="nav-link" href="#">Total price: <?php total_cart_price();?></a>
                         </li>
 
 
