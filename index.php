@@ -20,6 +20,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            overflow-x:hidden;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,7 +45,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
 
                         <li class="nav-item">
@@ -48,7 +53,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Register</a>
+                            <a class="nav-link" href="./users_area/user_registration.php">Register</a>
                         </li>
 
                         <li class="nav-item">
@@ -89,7 +94,7 @@
                     <a class="nav-link" href="#">Welcome Guest</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="./users_area/user_login.php">Login</a>
                 </li>
             </ul>
         </nav>
@@ -107,48 +112,15 @@
                 <div class="row">
                     <!-- fethching products dynamically -->
                     <?php
-                        // $select_query = "Select * from `products` order by rand() limit 0,3";
-                        // $result_query = mysqli_query($conn,$select_query);
-                        // //$row = mysqli_fetch_assoc($result_query);
-                        // while($row = mysqli_fetch_assoc($result_query)){
-                        //     $product_id = $row['product_id'];
-                        //     $product_title = $row['product_title'];
-                        //     $product_description = $row['product_description'];
-                        //     $product_image1 = $row['product_image1'];
-                        //     $product_price = $row['product_price'];
-                        //     $category_id = $row['category_id'];
-                        //     $brand_id = $row['brand_id'];
-
-                        //     echo " <div class='col-md-4 mb-2'>
-                        //     <div class='card'>
-                        //         <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-                        //         <div class='card-body'>
-                        //             <h5 class='card-title'>$product_title</h5>
-                        //             <p class='card-text'>$product_description</p>
-                        //             <a href='#' class='btn btn-info'>Add to cart</a>
-                        //             <a href='#' class='btn btn-secondary'>View more</a>
-                        //         </div>
-                        //     </div>
-                        // </div>";
-                        // }
+                       
+                       
                         getProducts();
                         get_unique_categories();
                         get_unique_brands();
                         // $ip = getIPAddress(); 
                         // echo 'User Real IP Address - '.$ip;
                     ?>
-                    <!-- <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="images/products-1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-info">Add to cart</a>
-                                <a href="#" class="btn btn-secondary">View more</a>
-                            </div>
-                        </div>
-                    </div> -->
+                   
                     <!-- row end -->
                 </div>
                 <!-- col end -->

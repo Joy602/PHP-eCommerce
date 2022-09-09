@@ -1,7 +1,7 @@
 <?php
 
 //Including DB connection
-include('./includes/connect.php');
+//include('./includes/connect.php');
 
 //getting products from DB
 function getProducts(){
@@ -69,7 +69,7 @@ function get_all_products(){
                 <p class='card-text'>$product_description</p>
                 <p class='card-text'>Price: $product_price/-</p>
                 <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
-                <a href='#' class='btn btn-secondary'>View more</a>
+                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
             </div>
         </div>
     </div>";
@@ -305,14 +305,13 @@ function getIPAddress() {
     elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {  
                 $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];  
      }  
-//whether ip is from the remote address  
+ 
     else{  
              $ip = $_SERVER['REMOTE_ADDR'];  
      }  
      return $ip;  
 }  
-// $ip = getIPAddress();  
-// echo 'User Real IP Address - '.$ip; 
+  
 
 
 

@@ -1,7 +1,7 @@
 <!-- Database connection -->
 <?php
-    include('includes/connect.php');
-    include('functions/common_function.php');
+    include('../includes/connect.php');
+     
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP eCommerce</title>
+    <title>Checkout Page</title>
     <!-- bootstrap css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <!-- font awesome link -->
@@ -40,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
 
                         <li class="nav-item">
@@ -55,13 +55,7 @@
                             <a class="nav-link" href="#">Contact</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-plus"></i><sup><?php    cart_item();?></sup></a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Total price: <?php total_cart_price();?></a>
-                        </li>
 
 
 
@@ -78,10 +72,7 @@
             </div>
         </nav>
 
-        <!-- calling cart funtion -->
-        <?php
-        cart();
-        ?>
+
 
         <!-- second child -->
         <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
@@ -90,7 +81,7 @@
                     <a class="nav-link" href="#">Welcome Guest</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./users_area/user_login.php">Login</a>
+                    <a class="nav-link" href="#">Login</a>
                 </li>
             </ul>
         </nav>
@@ -103,64 +94,27 @@
 
         <!-- fourth child -->
         <div class="row px-1">
-            <div class="col-md-10  ">
-                <!-- products -->
-                <div class="row">
-                   
-                   
-                     
-                    <?php
-                        
-                         
-                        view_details();
-                        get_unique_categories();
-                        get_unique_brands();
-                    ?>
-                     
-                    <!-- row end -->
-                </div>
-                <!-- col end -->
+            <div class="col-md-12">
+                    <!-- products -->
+                    <div class="row">
+                       <?php
+                         if(!isset($_SESSION['username'])){
+                            include('user_login.php');
+                        }else{
+                            include('payment.php');
+                        }
+                       ?>
+                    </div>
+                    <!-- col end -->
             </div>
-            <div class="col-md-2 bg-secondary p-0">
+                <div>
                 <!-- sideNav -->
 
-                <!-- Brands to be displayed -->
-                <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light">
-                            <h4>Delivery Brands</h4>
-                        </a>
-                    </li>
-
-                    <?php
-                        getBrands();
-                    
-                    ?>
-
-
-                </ul>
-
-                <!-- Categoriess to be displayed -->
-
-                <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light">
-                            <h4>Categories</h4>
-                        </a>
-                    </li>
-
-                    <?php
-                    getCategories()
-                    
-                    ?>
 
 
 
 
-                </ul>
-
-
-            </div>
+                </div>
         </div>
 
 
