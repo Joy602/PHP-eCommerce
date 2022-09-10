@@ -2,6 +2,7 @@
 <?php
     include('includes/connect.php');
     include('functions/common_function.php');
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +22,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <style>
-        body{
-            overflow-x:hidden;
-        }
+    body {
+        overflow-x: hidden;
+    }
     </style>
 </head>
 
@@ -52,16 +53,27 @@
                             <a class="nav-link" href="display_all.php">Products</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="./users_area/user_registration.php">Register</a>
-                        </li>
+                        <?php
+                            if(isset($_SESSION['username'])){
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='./users_area/profile.php'>My Account</a>
+                            </li>";
+                            }else{
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='./users_area/user_registration.php'>Register</a>
+                            </li>";
+                            }
+                        ?>
+
+                    
 
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-plus"></i><sup><?php    cart_item();?></sup></a>
+                            <a class="nav-link" href="cart.php"><i
+                                    class="fa-solid fa-cart-plus"></i><sup><?php    cart_item();?></sup></a>
                         </li>
 
                         <li class="nav-item">
@@ -73,11 +85,12 @@
                     </ul>
 
                     <form class="d-flex" action="search_product.php" method="get">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            name="search_data">
                         <!-- <button class="btn btn-outline-light" type="submit">Search</button> -->
                         <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
                     </form>
-                     
+
                 </div>
             </div>
         </nav>
@@ -90,12 +103,22 @@
         <!-- second child -->
         <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome Guest</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./users_area/user_login.php">Login</a>
-                </li>
+                
+
+                <?php
+
+                    if(!isset($_SESSION['username'])){
+                        echo "<li class='nav-item'><a class='nav-link' href='#'>Welcome Guest</a></li>";
+                    }else{
+                        echo "<li class='nav-item'><a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a></li>";
+                    }
+                    
+                    if(!isset($_SESSION['username'])){
+                        echo "<li class='nav-item'><a class='nav-link' href='./users_area/user_login.php'>Login</a></li>";
+                    }else{
+                        echo "<li class='nav-item'><a class='nav-link' href='./users_area/logout.php'>Logout</a></li>";
+                    }
+                ?>
             </ul>
         </nav>
 
@@ -120,7 +143,7 @@
                         // $ip = getIPAddress(); 
                         // echo 'User Real IP Address - '.$ip;
                     ?>
-                   
+
                     <!-- row end -->
                 </div>
                 <!-- col end -->
