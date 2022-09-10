@@ -1,3 +1,9 @@
+<?php
+    include('../includes/connect.php');
+    include('../functions/common_function.php');
+     
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,12 +20,19 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css -->
     <link rel="stylesheet" href="../style.css">
-    <!-- <style>
+    <style>
     .admin_image {
         width: 100px;
         object-fit: contain;
     }
-    </style> -->
+    body{
+        overflow-x:hidden;
+    }
+    .product_img{
+        width:10%;
+        object-fit:contain;
+    }
+    </style>
 </head>
 
 <body>
@@ -57,7 +70,7 @@
 
                 <div class="button text-center">
                     <button><a href="insert_product.php" class="nav-link text-light bg-info my-1 p-2 ">Insert Products</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1 p-2">View Products</a></button>
+                    <button><a href="index.php?view_products" class="nav-link text-light bg-info my-1 p-2">View Products</a></button>
                     <button><a href="index.php?insert_category" class="nav-link text-light bg-info my-1 p-2">Insert
                             Categories</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1 p-2">View Categories</a></button>
@@ -81,13 +94,16 @@
                 if(isset($_GET['insert_brand'])){
                     include('insert_brands.php');
                 }
+                if(isset($_GET['view_products'])){
+                    include('view_products.php');
+                }
             ?>
         </div>
 
         <!-- last child -->
-        <div class="bg-info p-3 text-center footer">
+        <!-- <div class="bg-info p-3 text-center footer">
             <p>All rights reserved by Joy- 2022</p>
-        </div>
+        </div> -->
 
 
     </div>
