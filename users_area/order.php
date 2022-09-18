@@ -15,7 +15,7 @@
     $result_cart_price = mysqli_query($conn,$cart_query_price);
     $invoice_number = mt_rand();
     $status = "pending";
-    $count_products = mysqli_num_rows($result_cart_price);
+    $count_products = mysqli_num_rows($result_cart_price); //product number will be equal to row number here
 
     while($row_price = mysqli_fetch_array($result_cart_price)){
         $product_id = $row_price['product_id'];
